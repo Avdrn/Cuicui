@@ -1,5 +1,7 @@
 
 var tam1 = new Tamagotchi()
+var mySound = new sound("Sounds/338277__andreas-mustola__bird4.wav");
+
 
 tam1.start()
 
@@ -12,6 +14,7 @@ $(document).ready(function() {
       tam1.hunger += 5;
     }
     document.getElementById("hunger").innerHTML = tam1.hunger + "%"
+    mySound.play();
   });
 
   $("#sleep" ).click(function() {
@@ -21,6 +24,7 @@ $(document).ready(function() {
       tam1.energy += 5;
     }
     document.getElementById("energy").innerHTML = tam1.energy + "%"
+    mySound.play();
   });
 
   $("#wash" ).click(function() {
@@ -30,6 +34,7 @@ $(document).ready(function() {
       tam1.hygiene += 30;
     }
     document.getElementById("hygiene").innerHTML = tam1.hygiene + "%"
+    mySound.play();
   });
 
   $("#play" ).click(function() {
@@ -39,7 +44,12 @@ $(document).ready(function() {
       tam1.fun += 5;
     }
     document.getElementById("fun").innerHTML = tam1.fun + "%"
+    mySound.play();
   });
 
+
+
   });
+
+
 
