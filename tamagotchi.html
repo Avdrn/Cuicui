@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="tamagotchiStyle.css">
+  <title>tamagotchi</title>
+</head>
+<body>
+  
+  <h1 class="pet-name">Cui-cui</h1>
+
+  <section id="status">  
+    <div class="nav-bar">
+      
+      <div  class="nav-items">
+        <p>Hunger</p> 
+       
+        <div class="meter">
+            <span id ="hunger">100%</span>
+        </div>
+      </div>
+            
+      <div class="nav-items">
+        <p>Energy</p>
+
+        <div class="meter">
+          <span id ="energy">100%</span>
+        </div>
+    </div>
+
+    <div class="nav-items">
+        <p>Hygiene</p>
+
+        <div class="meter">
+          <span id ="hygiene">100%</span>
+      </div>
+    </div>
+
+    <div class="nav-items">
+      <p>Fun</p>
+      
+      <div class="meter"> 
+          <span id="fun">100%</span>
+      </div>
+    </div>  
+</div>
+</section>
+
+<section class="center"> 
+  <div class="animate"> 
+    <img id ="pet" class="pet" src="Img/bird.png" alt="bird-img" >
+  </div>
+</section> 
+
+<section class="nav-bar" id="buttons">
+  <div id ="food" class="nav-items btn">Food</div>
+  <div id ="wash" class="nav-items btn">Wash</div>
+  <div id ="sleep" class="nav-items btn">Sleep</div>
+  <div id ="play" class="nav-items btn">Play</div>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script> 
+<script src="tamagotchi JS/tamagotchi.js"> </script>
+<script src="tamagotchi JS/tamagotchiDom.js"> </script>
+
+</body>
+</html>
