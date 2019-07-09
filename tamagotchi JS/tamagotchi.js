@@ -5,6 +5,7 @@ class Tamagotchi {
   this.energy = 100
   this.hygiene = 100
   this.fun = 100
+  this.points = 0
   }
 
  start (){
@@ -19,6 +20,7 @@ class Tamagotchi {
      this.changeImg()
     this.checkStatus()
     this.changeImg()
+    this.increasePoints()
   }, 1000)};
 
   // decrease the bars %
@@ -35,6 +37,8 @@ class Tamagotchi {
       document.getElementById("energy").innerHTML = this.energy + "%"
       document.getElementById("hygiene").innerHTML = this.hygiene + "%"
       document.getElementById("fun").innerHTML = this.fun + "%"
+      document.getElementById("points").innerHTML = this.points + "pts"
+
       } 
 
      // change the width of the bars
@@ -85,7 +89,6 @@ class Tamagotchi {
     $("#hygiene").css("background-color", "rgb(43,194,83")
     }
   }
-
    /* fun */
    colorFun(){
     if (this.fun <= 20){
@@ -95,6 +98,13 @@ class Tamagotchi {
     } else {
     $("#fun").css("background-color", "rgb(43,194,83")
       }
+  }
+
+   /* points*/
+   increasePoints() {
+    if (this.hunger >= 60 && this.energy >= 60 && this.hygiene >= 60 && this.fun >= 60) {
+      this.points += 1
+    }
   }
    
   // change img
@@ -128,6 +138,8 @@ function sound(src) {
     this.sound.pause();
   }
 }
+
+
 
 
 

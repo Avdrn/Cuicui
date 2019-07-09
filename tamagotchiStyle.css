@@ -57,7 +57,7 @@
 
 
 
-  .center {
+  .center { 
       display: flex;
       justify-content: center;
       padding: 10px;
@@ -66,8 +66,8 @@
   
     .animate {
       position: relative; 
-      height: 200px;
-      width: 100px;
+      height: 30vh;
+      width: auto;
     }
   #pet {
       position: absolute;
@@ -81,7 +81,7 @@
   .pet-name {
     text-align: center;
     font-family: "fontName";
-    font-size: 20vh;
+    font-size: 15vh;
     padding : 5px;
     margin: 5px;
   }
