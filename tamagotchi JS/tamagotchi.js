@@ -6,6 +6,7 @@ class Tamagotchi {
   this.hygiene = 100
   this.fun = 100
   this.points = 0
+  this.counterPoo = 0
   }
 
  start (){
@@ -120,7 +121,29 @@ class Tamagotchi {
   }
   else {
   $ ("#pet").attr("src", "Img/bird.png")
-  }
+  }}
+
+  poo (){
+    if(this.counterPoo == 5 && this.hunger == 100){
+      this.counterPoo++;
+      $("#poo5-hide").show()
+    }
+    else if(this.counterPoo == 4 && this.hunger == 100){
+      this.counterPoo++;
+      $("#poo4-hide").show()
+    }
+    else if(this.counterPoo == 3 && this.hunger == 100){
+      this.counterPoo++;
+      $("#poo3-hide").show()
+    }
+    else if(this.counterPoo == 2 && this.hunger == 100){
+      this.counterPoo++;
+      $("#poo2-hide").show()
+    }
+    else if (this.hunger == 100) {
+      this.counterPoo++;
+      $("#poo1-hide").show()
+      }
 }
      }
 

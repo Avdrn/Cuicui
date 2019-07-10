@@ -55,19 +55,41 @@
 
   }
 
-
+  .points {
+    display: flex;
+    flex-direction: row;
+   align-self: center;
+  }
 
   .center { 
       display: flex;
-      justify-content: center;
+      flex-direction: row;
       padding: 10px;
       margin : 20px;
   }
+
+  .poo-left { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 10px;
+    margin : 20px;
+    width: 30%;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start ;
+  align-items: 
+}
   
     .animate {
       position: relative; 
       height: 30vh;
-      width: auto;
+      width: 30%;
     }
   #pet {
       position: absolute;
@@ -76,6 +98,12 @@
       animation: bounce 3s infinite; 
     }
 
+  .poo {
+     display: flex; 
+     justify-content : flex-end;
+     height: auto;
+     width: 5vh;
+    }
   
 
   .pet-name {
@@ -88,15 +116,15 @@
 
   @keyframes bounce {
     0% {
-      top: 0%;
+      top: -20%;
     }
   
     50% {
-      top: 20%;
+      top: 30%;
     }
 
     100% {
-      top: 0;
+      top: -20%;
     }
   }
 
@@ -109,7 +137,6 @@
       margin-top: 0%;
     }
   }
-
 
 
 
