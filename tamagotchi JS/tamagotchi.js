@@ -61,6 +61,7 @@ class Tamagotchi {
       $("#hunger").css("background-color", "rgb(43,194,83")
         }
     }
+ 
     
      checkStatus (){
       if (this.hunger <= 0 || this.energy <= 0 || this.hygiene <= 0 || this.fun <= 0){
@@ -110,7 +111,22 @@ class Tamagotchi {
    
   // change img
   changeImg(){
-  if (this.hunger <= 0 || this.energy <= 0 || this.hygiene <= 0 || this.fun <= 0) {
+    if (this.points >= 100) {
+      if (this.hunger <= 0 || this.energy <= 0 || this.hygiene <= 0 || this.fun <= 0) {
+        $ ("#pet").attr("src", "Img/game-over.png")
+      }
+      else if (this.hunger <= 20 || this.energy <= 20 || this.hygiene <= 20 || this.fun <= 20) {
+        $ ("#pet").attr("src", "Img/owlDisapear.png")
+      }
+      else if (this.hunger <= 60 || this.energy <= 60 || this.hygiene <= 60 || this.fun <= 60){
+      $ ("#pet").attr("src", "Img/owlFading.png")
+      }
+      else {
+      $ ("#pet").attr("src", "Img/owl.png")
+      }
+    }
+  
+   else if (this.hunger <= 0 || this.energy <= 0 || this.hygiene <= 0 || this.fun <= 0) {
     $ ("#pet").attr("src", "Img/game-over.png")
   }
   else if (this.hunger <= 20 || this.energy <= 20 || this.hygiene <= 20 || this.fun <= 20) {
@@ -127,24 +143,37 @@ class Tamagotchi {
     if(this.counterPoo == 5 && this.hunger == 100){
       this.counterPoo++;
       $("#poo5-hide").show()
+      pooSound.play()
+      this.hygiene -= 10
     }
     else if(this.counterPoo == 4 && this.hunger == 100){
       this.counterPoo++;
       $("#poo4-hide").show()
+      pooSound.play()
+      this.hygiene -= 10
     }
     else if(this.counterPoo == 3 && this.hunger == 100){
       this.counterPoo++;
       $("#poo3-hide").show()
+      pooSound.play()
+      this.hygiene -= 10
     }
     else if(this.counterPoo == 2 && this.hunger == 100){
       this.counterPoo++;
       $("#poo2-hide").show()
+      pooSound.play()
+      this.hygiene -= 10
     }
     else if (this.hunger == 100) {
       this.counterPoo++;
       $("#poo1-hide").show()
+      pooSound.play()
+      this.hygiene -= 10
       }
 }
+ stop () {
+  clearInterval(this.Tamagotchiinterval);
+ }
      }
 
 function sound(src) {
