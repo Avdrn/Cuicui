@@ -19,9 +19,10 @@ class Tamagotchi {
      this.colorHygiene()
      this.colorFun()
      this.changeImg()
-    this.checkStatus()
-    this.changeImg()
-    this.increasePoints()
+      this.checkStatus()
+      this.changeImg()
+     this.increasePoints()
+    
   }, 1000)};
 
   // decrease the bars %
@@ -77,7 +78,7 @@ class Tamagotchi {
      } else if (this.energy <= 60) {
         $("#energy").css("background-color", "#f1a165")
       } else {
-      $("#energy").css("background-color", "rgb(43,194,83")
+      $("#energy").css("background-color", "rgb(43,194,83)")
       } 
     }
 
@@ -110,34 +111,78 @@ class Tamagotchi {
   }
    
   // change img
-  changeImg(){
-    if (this.points >= 100) {
-      if (this.hunger <= 0 || this.energy <= 0 || this.hygiene <= 0 || this.fun <= 0) {
-        $ ("#pet").attr("src", "Img/game-over.png")
-      }
-      else if (this.hunger <= 20 || this.energy <= 20 || this.hygiene <= 20 || this.fun <= 20) {
-        $ ("#pet").attr("src", "Img/owlDisapear.png")
-      }
-      else if (this.hunger <= 60 || this.energy <= 60 || this.hygiene <= 60 || this.fun <= 60){
-      $ ("#pet").attr("src", "Img/owlFading.png")
-      }
-      else {
-      $ ("#pet").attr("src", "Img/owl.png")
-      }
-    }
+ changeImg(){
+
+  if (this.points > 200){
+    this.owlTransform()
+  } else if (this.points == 200)  { 
+    this.transitionExplosion()
+    owlSound.play()
+  } else if (this.points < 200 && this.points > 100) {
+    this.birdTransform()
+  } else if (this.points == 100)  { 
+    this.transitionExplosion()
+    cuicuiSound.play()
+  } else if (this.points < 100) {
+        this.CuicuiTransform()
   
-   else if (this.hunger <= 0 || this.energy <= 0 || this.hygiene <= 0 || this.fun <= 0) {
+      };
+    
+  }
+
+
+  birdTransform(){
+    if (this.hunger <= 0 || this.energy <= 0 || this.hygiene <= 0 || this.fun <= 0) {
+    $ ("#pet").attr("src", "Img/game-over.png")
+  } else if (this.hunger <= 20 || this.energy <= 20 || this.hygiene <= 20 || this.fun <= 20) {
+    $ ("#pet").attr("src", "Img/birdDisapear.png")
+  } else if (this.hunger <= 60 || this.energy <= 60 || this.hygiene <= 60 || this.fun <= 60){
+  $ ("#pet").attr("src", "Img/birdFading.png")
+  } else {
+  $ ("#pet").attr("src", "Img/bird.png")
+  }}
+  
+  owlTransform(){  
+  if (this.hunger <= 0 || this.energy <= 0 || this.hygiene <= 0 || this.fun <= 0) {
     $ ("#pet").attr("src", "Img/game-over.png")
   }
   else if (this.hunger <= 20 || this.energy <= 20 || this.hygiene <= 20 || this.fun <= 20) {
-    $ ("#pet").attr("src", "Img/birdDisapear.png")
+    $ ("#pet").attr("src", "Img/owlDisapear.png")
   }
   else if (this.hunger <= 60 || this.energy <= 60 || this.hygiene <= 60 || this.fun <= 60){
-  $ ("#pet").attr("src", "Img/birdFading.png")
-  }
-  else {
-  $ ("#pet").attr("src", "Img/bird.png")
+  $ ("#pet").attr("src", "Img/owlFading.png")
+  } else {
+    $ ("#pet").attr("src", "Img/owl.png")
   }}
+
+  CuicuiTransform(){  
+    if (this.hunger <= 0 || this.energy <= 0 || this.hygiene <= 0 || this.fun <= 0) {
+      $ ("#pet").attr("src", "Img/game-over.png")
+    }
+    else if (this.hunger <= 20 || this.energy <= 20 || this.hygiene <= 20 || this.fun <= 20) {
+      $ ("#pet").attr("src", "Img/CuicuiDisapear.svg")
+    }
+    else if (this.hunger <= 60 || this.energy <= 60 || this.hygiene <= 60 || this.fun <= 60){
+    $ ("#pet").attr("src", "Img/Cuicuifading.svg")
+    } else {
+      $ ("#pet").attr("src", "Img/Cuicui.svg")
+    }}
+
+    transitionExplosion(){
+      $ ("#pet").attr("src", "Img/explosion.png")
+      $ ("#pet").addClass("explosion")
+      $ ("#pet").removeClass("implosion-trans")
+      $ ("#pet").removeClass("implosion")
+      transformationSound.play()
+      $ ("#pet").addClass("explosion-trans")
+
+      $ ("#pet.explosion-trans").one("transitionend", function() {
+        $ ("#pet").addClass("implosion")
+        $ ("#pet").addClass("implosion-trans")
+        $ ("#pet").removeClass("explosion")
+        $ ("#pet").removeClass("explosion-trans")
+
+      })}
 
   poo (){
     if(this.counterPoo == 5 && this.hunger == 100){
@@ -145,32 +190,29 @@ class Tamagotchi {
       $("#poo5-hide").show()
       pooSound.play()
       this.hygiene -= 10
-    }
-    else if(this.counterPoo == 4 && this.hunger == 100){
+    } else if (this.counterPoo == 4 && this.hunger == 100){
       this.counterPoo++;
       $("#poo4-hide").show()
       pooSound.play()
       this.hygiene -= 10
-    }
-    else if(this.counterPoo == 3 && this.hunger == 100){
+    } else if(this.counterPoo == 3 && this.hunger == 100){
       this.counterPoo++;
       $("#poo3-hide").show()
       pooSound.play()
       this.hygiene -= 10
-    }
-    else if(this.counterPoo == 2 && this.hunger == 100){
+    } else if(this.counterPoo == 2 && this.hunger == 100){
       this.counterPoo++;
       $("#poo2-hide").show()
       pooSound.play()
       this.hygiene -= 10
-    }
-    else if (this.hunger == 100) {
+    } else if (this.hunger == 100) {
       this.counterPoo++;
       $("#poo1-hide").show()
       pooSound.play()
       this.hygiene -= 10
       }
 }
+
  stop () {
   clearInterval(this.Tamagotchiinterval);
  }

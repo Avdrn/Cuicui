@@ -8,6 +8,22 @@
   <title>tamagotchi</title>
 </head>
 <body>
+  <div id="open-cover">
+    <h1 class="pet-name">Cui-cui</h1>
+    <h2>Take care of your bird</h2>
+    <p class="description">
+Taking care of a bird is not only feeding him from time to time. In order to see him grow, you need to be sure his social life, hygiene is ok and that he is enjoying your company
+    </p>
+    <ul>Tricks</ul>
+    <li>Do not overfeed the bird</li>
+    <li>Having fun is pretty cool but exhausting</li>
+    <li>Your status bars must stay green to collect points and hope for your bird to reach his aduld state</li>
+  <div id="playBtn" class="container">
+    <div class="button button-play">
+    </div>
+    </div>
+  </div>
+  <div id="game">
   <div class="center">
     <h1 class="pet-name">Cui-cui</h1>
     <p id="points">0pts</p>
@@ -69,8 +85,11 @@
        <img class ="poo" src="Img/poo.png" alt="poo5">
      </div>
    </div>
+  
+
+
    <div class="animate center">
-      <img id ="pet" class="pet" src="Img/bird.png" alt="bird-img" >
+      <img id ="pet" class="pet">
     </div>
 <div class="points">
   <img id = 'startPause' class="active" src="Img/play.svg" alt="playPause">
@@ -86,6 +105,7 @@
   <div id ="sleep" class="nav-items btn">Sleep</div>
   <div id ="play" class="nav-items btn">Play</div>
 </section>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script> 
 <script src="tamagotchi JS/tamagotchi.js"> </script>

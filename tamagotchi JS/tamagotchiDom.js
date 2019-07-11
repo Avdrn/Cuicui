@@ -5,7 +5,30 @@ var sleepSound = new sound("Sounds/446581__nicolas4677__snoring.wav");
 var foodSound = new sound("Sounds/429593__inspectorj__chewing-breadstick-single-b.wav")
 var waterSound = new sound("Sounds/371274__mafon2__water-click.wav")
 var pooSound = new sound("Sounds/237662__delphidebrain__delphis-fart-11.wav")
+var owlSound = new sound("Sounds/384186__claytron3000__desert-owl.mp3")
+var transformationSound = new sound("Sounds/240944__soundfreakthony__laser-on-off-kawabunga.wav")
+var cuicuiSound = new sound("Sounds/85403__readeonly__canaryartie-3.wav")
 
+
+// --------PLAY btn-------------//
+window.onload = ()=>{
+  let button = document.querySelector('.button-play');
+  
+  addClass(button, 'active');
+  setTimeout(()=>{
+    removeClass(button, 'active')
+  }, 2500)
+  
+  function addClass(el, className){
+    el.className += ` ${className}`;
+  }
+  
+  function removeClass(el, className){
+    el.className = el.className.replace(className, '');
+  }
+}
+
+//----------------------//
 
 $(document).ready(function() {
   $("#food" ).click(function() {
@@ -64,6 +87,7 @@ $(document).ready(function() {
       $("#startPause").removeClass("active")
       tam1.start()
       
+      
     } else {
       $("#startPause").attr("src", "Img/play.svg")
       $("#startPause").addClass("active")
@@ -73,9 +97,13 @@ $(document).ready(function() {
     
       
       $("#poo1-hide, #poo2-hide, #poo3-hide, #poo4-hide, #poo5-hide").hide()
+      $(".explosion").hide()
 
 
-    });
+     
+      })
+
+   
 
   });
 
