@@ -25,9 +25,11 @@
    li, p{
     font-family: "fontStatus";
     font-size: 1.5rem;
-    margin : 1.5rem;
     }
 
+    li {
+      margin : 1.5rem;
+    }
 
     /*----------Open cover----------------*/
 
@@ -140,6 +142,7 @@
     width: 20vw;
     height: auto;
     flex-wrap: nowrap;
+    text-align: center;
   }
 
   .box-width {
