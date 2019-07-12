@@ -12,10 +12,7 @@ var cuicuiSound = new sound("Sounds/85403__readeonly__canaryartie-3.wav")
 
 // --------PLAY -------------//
 
-tam1.start()
-$("#startPause").attr("src", "Img/pause.svg")
-$("#startPause").removeClass("active")
-$("#pet").toggleClass("animate")
+
 
 
 
@@ -29,6 +26,10 @@ $(document).ready(function() {
 $("#starting-btn").click(function() {
   $("#game").show()
   $("#open-cover").hide()
+  tam1.start()
+$("#startPause").attr("src", "Img/pause.svg")
+$("#startPause").removeClass("active")
+$("#pet").toggleClass("animate")
 })
 
 
