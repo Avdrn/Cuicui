@@ -90,7 +90,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 10px;
-    margin : 20px;
+    margin : 20px 0;
   }
   
   .left {
@@ -239,11 +239,7 @@
   width: 15vw;
 }
 
-.btn:hover {
-  background: #21556d ;
-  transform: scale(1.5);
 
-}
 
 /* Status btn */
 
@@ -357,6 +353,9 @@
 
   /* --------Media Querie----------*/
 
-  @media [(media-features)] {
-    // Styles
-  }
+  @media (min-width: 500px) {
+    .btn:hover {
+      background: #21556d ;
+      transform: scale(1.5);
+    
+    }}
