@@ -5,14 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="tamagotchiStyle.css">
+  <link rel="stylesheet" media="(media-features)" href="tamagotchiStyle.css" />
   <title>tamagotchi</title>
 </head>
+
 <body>
   <div id="open-cover" class="open-cover active">
     <h1 class="pet-name">Cui-cui</h1>
       <div class="description-box">
         <h2>Take care of your bird</h2>
-        <p class="description">
+        <p>
           Taking care of a bird is not only feeding him from time to time. In order to see him grow, you need to be sure his social life, hygiene are ok and that he is enjoying your company.
         </p>
       </div>
@@ -29,47 +31,41 @@
   </div>
 
   <div id="game" class="active">
-  <div class="center">
-    <h1 class="pet-name">Cui-cui</h1>
-    <p id="points">0pts</p>
-</div>
+    <div class="center">
+     <h1 class="pet-name">Cui-cui</h1>
+      <p id="points">0pts</p>
+    </div>
 
-  <section id="status">  
-    <div class="nav-bar">
-      
-      <div  class="nav-items">
-        <p>Hunger</p> 
-       
+    <section id="status">  
+      <div class="nav-bar">
+        <div  class="nav-items">
+         <p>Hunger</p> 
         <div class="meter">
-            <span id ="hunger">100%</span>
+         <span id ="hunger">100%</span>
         </div>
       </div>
-            
+          
       <div class="nav-items">
         <p>Energy</p>
-
         <div class="meter">
           <span id ="energy">100%</span>
         </div>
-    </div>
+        </div>
 
-    <div class="nav-items">
+      <div class="nav-items">
         <p>Hygiene</p>
-
         <div class="meter">
           <span id ="hygiene">100%</span>
-      </div>
-    </div>
+          </div>
+        </div>
 
-    <div class="nav-items">
-      <p>Fun</p>
-      
+      <div class="nav-items">
+       <p>Fun</p>
       <div class="meter"> 
-          <span id="fun">100%</span>
-      </div>
-    </div>  
-</div>
-</section>
+        <span id="fun">100%</span>
+        </div>
+      </div>  
+    </div>
 
 <section>
   <div class="left">
@@ -91,17 +87,13 @@
      </div>
    </div>
   
-
-
    <div class="animate center">
       <img id ="pet" class="pet">
     </div>
-<div class="points">
-  <img id = 'startPause' class="active" src="Img/play.svg" alt="playPause">
+  <div class="points">
+    <img id = 'startPause' class="active" src="Img/play.svg" alt="playPause">
   </div>
 </div>
-
-  
 </section> 
 
 <section class="nav-bar" id="buttons">

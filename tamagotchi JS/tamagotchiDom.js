@@ -12,6 +12,11 @@ var cuicuiSound = new sound("Sounds/85403__readeonly__canaryartie-3.wav")
 
 // --------PLAY -------------//
 
+tam1.start()
+$("#startPause").attr("src", "Img/pause.svg")
+$("#startPause").removeClass("active")
+$("#pet").toggleClass("animate")
+
 
 
 //----------------------//
@@ -20,28 +25,28 @@ $(document).ready(function() {
 
   $("#game").hide()
 
+
 $("#starting-btn").click(function() {
   $("#game").show()
   $("#open-cover").hide()
 })
 
 
-
   $("#food" ).click(function() {
     if (tam1.hunger + 5 >= 100){
       tam1.hunger = 100  
       tam1.poo();   
-  }
+      }
      else {
      tam1.hunger += 5
     }
     
     document.getElementById("hunger").innerHTML = tam1.hunger + "%"
     foodSound.play();
-    
   });
 
-  $("#sleep" ).click(function() {
+  $("#sleep" ).click(() =>{
+
     if (tam1.energy + 5 >= 100) {
       tam1.energy = 100;
     } else {
@@ -76,31 +81,34 @@ $("#starting-btn").click(function() {
   });
 
     $("#startPause").click(function() {
+      
       $("#pet").toggleClass("animate")
-
       if ($("#startPause").hasClass("active")){
-      $("#startPause").attr("src", "Img/pause.svg")
-      $("#startPause").removeClass("active")
-      tam1.start()
+        $("#startPause").attr("src", "Img/pause.svg")
+        $("#startPause").removeClass("active")
+        tam1.start()
+      } else if($("#startPause").hasClass("restart")) {  
+          tam1.hunger = 100
+          tam1.energy = 100
+          tam1.hygiene = 100
+          tam1.fun = 100
+          tam1.points = 0
+          tam1.start()
+          $("#startPause").removeClass("restart")
+          $("#startPause").hasClass("active")
+          $("#startPause").attr("src", "Img/pause.svg")
+          $("#startPause").removeClass("active")
+          $("#pet").toggleClass("animate") 
+      } else {
+          $("#startPause").attr("src", "Img/play.svg")
+          $("#startPause").addClass("active")
+          tam1.stop()
+      }})
       
-      
-    } else {
-      $("#startPause").attr("src", "Img/play.svg")
-      $("#startPause").addClass("active")
-      tam1.stop()
-    
-    }
-    
-      
+
       $("#poo1-hide, #poo2-hide, #poo3-hide, #poo4-hide, #poo5-hide").hide()
       $(".explosion").hide()
-
-
      
-      })
-
-   
-
   });
 
 

@@ -19,8 +19,8 @@ class Tamagotchi {
      this.colorHygiene()
      this.colorFun()
      this.changeImg()
-      this.checkStatus()
-      this.changeImg()
+    this.checkStatus()
+    this.changeImg()
      this.increasePoints()
     
   }, 1000)};
@@ -50,6 +50,18 @@ class Tamagotchi {
       $("#hygiene").css("width", `${this.hygiene}%`)
       $("#fun").css("width", `${this.fun}%`)
       }
+
+  // GAME OVER
+
+     checkStatus (){
+      if (this.hunger <= 0 || this.energy <= 0 || this.hygiene <= 0 || this.fun <= 0){
+       clearInterval(this.Tamagotchiinterval);
+       let mySound = new sound("Sounds/76376__deleted-user-877451__game-over.wav");
+       mySound.play()
+       $("#startPause").attr("src", "Img/arrows.png")
+       $("#startPause").addClass("restart")
+       }
+     }
     
     // colors
     /* hunger */
@@ -63,14 +75,7 @@ class Tamagotchi {
         }
     }
  
-    
-     checkStatus (){
-      if (this.hunger <= 0 || this.energy <= 0 || this.hygiene <= 0 || this.fun <= 0){
-       clearInterval(this.Tamagotchiinterval);
-       let mySound = new sound("Sounds/76376__deleted-user-877451__game-over.wav");
-       mySound.play()
-       }
-     }
+ 
   /* energy */
     colorEnergy() {
       if (this.energy <= 20){
@@ -125,11 +130,10 @@ class Tamagotchi {
     cuicuiSound.play()
   } else if (this.points < 100) {
         this.CuicuiTransform()
-  
       };
-    
   }
 
+// EVOLUTIONS
 
   birdTransform(){
     if (this.hunger <= 0 || this.energy <= 0 || this.hygiene <= 0 || this.fun <= 0) {
@@ -183,6 +187,8 @@ class Tamagotchi {
         $ ("#pet").removeClass("explosion-trans")
 
       })}
+
+      // POO
 
   poo (){
     if(this.counterPoo == 5 && this.hunger == 100){
